@@ -21,6 +21,77 @@ body {
   padding: 120px 0;
 }
 
+h2 {
+  margin-bottom: 50px;
+  font-size: 32px;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slides {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  animation: fade 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slide h3 {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+/* СТРЕЛКИ */
+
+.arrow {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* АНИМАЦИЯ */
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* АДАПТИВ */
+
+@media(max-width: 768px) {
+  .slide img {
+    height: 300px;
+  }
+}
+
 /* HEADER */
 
 .header {
