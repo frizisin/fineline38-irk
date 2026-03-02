@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+/* HEADER */
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: .3s;
+}
+
+.nav a:hover {
+  color: #f5c518;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* HERO */
+
+.hero {
+  height: 100vh;
+  background: url("img/photo-1600585154340-be6161a56a0c.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #f5c518;
+  color: black;
+  padding: 14px 35px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #d4aa15;
+}
+
+/* ABOUT */
+
+.about-text {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #ccc;
+}
+
+/* PROJECTS */
+
+.projects {
+  background: #181818;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: #222;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-card h3 {
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* CONTACTS */
+
+.contacts-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.socials {
+  text-align: center;
+}
+
+.socials a {
+  color: white;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: .3s;
+}
+
+.socials a:hover {
+  color: #f5c518;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  font-size: 14px;
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+  z-index: 2000;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  padding: 30px;
+  max-width: 900px;
+  width: 90%;
+  border-radius: 8px;
+  transform: scale(0.9);
+  transition: .4s;
+  position: relative;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.modal-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: #111;
+    width: 250px;
+    height: 100%;
+    flex-direction: column;
+    padding: 30px;
+    transition: .4s;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav a {
+    display: block;
+    margin: 20px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
